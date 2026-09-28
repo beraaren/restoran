@@ -1,0 +1,21 @@
+{
+  "venue_id": "demo",
+  "cameras": [
+    {
+      "camera_id": "cam0",
+      "label": "Sentetik PASS testi",
+      "resolution": [1280, 720],
+      "fps": 25.0,
+      "zones": [],
+      "pass_lines": [
+        {
+          "zone_id": "pass-out",
+          "kind": "pass_out",
+          "label": "Mutfak cikisi",
+          "a": {"x": 0.87, "y": 0.05},
+          "b": {"x": 0.87, "y": 0.55}
+        }
+      ]
+    }
+  ]
+}

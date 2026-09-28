@@ -1,0 +1,126 @@
+{
+  "venue_id": "demo",
+  "cameras": [
+    {
+      "camera_id": "cam0",
+      "label": "Demo sahne",
+      "resolution": [
+        1280,
+        720
+      ],
+      "fps": 25.0,
+      "zones": [
+        {
+          "zone_id": "table-m1",
+          "kind": "table",
+          "label": "Masa 1",
+          "polygon": [
+            {
+              "x": 0.05,
+              "y": 0.6
+            },
+            {
+              "x": 0.28,
+              "y": 0.6
+            },
+            {
+              "x": 0.28,
+              "y": 0.92
+            },
+            {
+              "x": 0.05,
+              "y": 0.92
+            }
+          ],
+          "pos_table_id": "M1"
+        },
+        {
+          "zone_id": "table-m2",
+          "kind": "table",
+          "label": "Masa 2",
+          "polygon": [
+            {
+              "x": 0.33,
+              "y": 0.6
+            },
+            {
+              "x": 0.56,
+              "y": 0.6
+            },
+            {
+              "x": 0.56,
+              "y": 0.92
+            },
+            {
+              "x": 0.33,
+              "y": 0.92
+            }
+          ],
+          "pos_table_id": "M2"
+        },
+        {
+          "zone_id": "table-m3",
+          "kind": "table",
+          "label": "Masa 3",
+          "polygon": [
+            {
+              "x": 0.61,
+              "y": 0.6
+            },
+            {
+              "x": 0.84,
+              "y": 0.6
+            },
+            {
+              "x": 0.84,
+              "y": 0.92
+            },
+            {
+              "x": 0.61,
+              "y": 0.92
+            }
+          ],
+          "pos_table_id": "M3"
+        },
+        {
+          "zone_id": "prep-1",
+          "kind": "prep",
+          "label": "Hazırlık tezgahı",
+          "polygon": [
+            {
+              "x": 0.05,
+              "y": 0.1
+            },
+            {
+              "x": 0.6,
+              "y": 0.1
+            },
+            {
+              "x": 0.6,
+              "y": 0.4
+            },
+            {
+              "x": 0.05,
+              "y": 0.4
+            }
+          ]
+        }
+      ],
+      "pass_lines": [
+        {
+          "zone_id": "pass-out",
+          "kind": "pass_out",
+          "label": "Mutfak cikisi",
+          "a": {
+            "x": 0.87,
+            "y": 0.05
+          },
+          "b": {
+            "x": 0.87,
+            "y": 0.55
+          }
+        }
+      ]
+    }
+  ]
+}

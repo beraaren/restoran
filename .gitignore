@@ -1,0 +1,12 @@
+node_modules/
+.venv/
+__pycache__/
+*.pyc
+data/*.db
+data/*.mp4
+data/*.jsonl
+logs/
+web/dist/
+web/node_modules/
+.uv/
+*.egg-info/

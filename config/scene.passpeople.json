@@ -1,0 +1,30 @@
+{
+  "venue_id": "demo",
+  "cameras": [
+    {
+      "camera_id": "cam0",
+      "label": "PASS kisi senaryosu",
+      "resolution": [
+        1280,
+        720
+      ],
+      "fps": 25.0,
+      "zones": [],
+      "pass_lines": [
+        {
+          "zone_id": "pass-out",
+          "kind": "pass_out",
+          "label": "Mutfak cikisi",
+          "a": {
+            "x": 0.62,
+            "y": 0.0
+          },
+          "b": {
+            "x": 0.62,
+            "y": 1.0
+          }
+        }
+      ]
+    }
+  ]
+}
