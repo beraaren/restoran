@@ -13,7 +13,7 @@ from sqlalchemy import (JSON, BigInteger, Boolean, Column, DateTime, Index,
 from sqlalchemy.orm import Session, declarative_base, sessionmaker
 
 from ..contracts.events import PosEvent, VisionEvent
-from ..core.reconcile import Anomaly
+from ..reconcile.engine import Anomaly
 
 Base = declarative_base()
 

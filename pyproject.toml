@@ -1,32 +1,26 @@
 [project]
-name = "restoran"
+name = "restoran-workspace"
 version = "0.1.0"
-description = "Kamera + POS event akislariyla restoran akis izleme ve kayip-kacak tespiti"
+description = "Restoran yonetim + kamera denetim urunu — uv workspace kok projeksi"
 requires-python = ">=3.12,<3.13"
 dependencies = [
-    "ultralytics>=8.3.0",
-    "opencv-python-headless>=4.9",
-    "numpy>=1.26",
-    "shapely>=2.0",
-    "pydantic>=2.7",
-    "fastapi>=0.115",
-    "uvicorn[standard]>=0.30",
-    "sqlalchemy>=2.0",
-    "psycopg[binary]>=3.1",
-    "python-dotenv>=1.0",
-    "httpx>=0.27",
+    "restoran-contracts",
+    "restoran-vision",
+    "restoran-reconcile",
+    "restoran-api",
 ]
 
-[project.optional-dependencies]
+[tool.uv.workspace]
+members = ["packages/*", "services/*", "apps/*"]
+
+[tool.uv.sources]
+restoran-contracts = { workspace = true }
+restoran-vision = { workspace = true }
+restoran-reconcile = { workspace = true }
+restoran-api = { workspace = true }
+
+[dependency-groups]
 dev = ["pytest>=8.0", "ruff>=0.5"]
-
-[build-system]
-requires = ["hatchling"]
-build-backend = "hatchling.build"
-
-[tool.hatch.build.targets.wheel]
-packages = ["src/restoran"]
 
 [tool.ruff]
 line-length = 100
-src = ["src", "web"]

@@ -18,7 +18,7 @@ from decimal import Decimal
 sys.path.insert(0, "src")
 
 from restoran.contracts.events import PosEvent, PosEventType, VisionEvent, VisionEventType
-from restoran.core.reconcile import Reconciler, RuleWindows
+from restoran.reconcile.engine import Reconciler, RuleWindows
 from restoran.store.db import init_db, store_pos, SessionLocal, PosEventRow
 
 T0 = 1_000_000_000_000  # sabit epoch; test deterministik kalsın
