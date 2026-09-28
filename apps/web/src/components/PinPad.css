@@ -1,0 +1,68 @@
+.pinpad {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  width: min(340px, 100%);
+}
+
+.pinpad-display {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 56px;
+  background: var(--bg);
+  border: var(--border);
+  border-radius: var(--radius);
+  font-family: var(--font-mono);
+  font-size: 28px;
+  letter-spacing: 0.35em;
+  color: var(--text);
+}
+
+.pinpad-display.is-empty {
+  color: var(--muted);
+  font-family: var(--font);
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+.pinpad-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-2);
+}
+
+.pinpad-key {
+  min-height: 64px;
+  font-size: 22px;
+  font-weight: 600;
+  border-radius: var(--radius);
+  background: var(--card);
+  border: var(--border);
+}
+
+.pinpad-key:hover:not(:disabled) {
+  background: var(--bg);
+}
+
+.pinpad-key:active:not(:disabled) {
+  background: var(--accent-soft);
+}
+
+.pinpad-key.is-clear {
+  font-size: 15px;
+  color: var(--danger);
+}
+
+.pinpad-key.is-enter {
+  font-size: 15px;
+  font-weight: 700;
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+.pinpad-key.is-enter:hover:not(:disabled) {
+  background: var(--accent-hover);
+}

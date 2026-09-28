@@ -1,0 +1,38 @@
+.terminal {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg);
+}
+
+.terminal-bar {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  border-bottom: var(--border);
+  background: var(--card);
+}
+
+.terminal-title {
+  font-weight: 700;
+}
+
+.terminal-right {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.terminal-clock {
+  font-family: var(--font-mono);
+  font-size: 15px;
+  color: var(--muted);
+}
+
+.terminal-content {
+  flex: 1;
+  padding: var(--space-4);
+  min-width: 0;
+}

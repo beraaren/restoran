@@ -1,0 +1,27 @@
+.kds-columns {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--space-3);
+  align-items: start;
+}
+
+.kds-column {
+  border: var(--border);
+  border-radius: var(--radius);
+  background: var(--card);
+  min-height: 50vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.kds-column-header {
+  padding: var(--space-3);
+  border-bottom: var(--border);
+  font-weight: 650;
+}
+
+.kds-empty {
+  padding: var(--space-4);
+  color: var(--muted);
+  font-size: 13px;
+}

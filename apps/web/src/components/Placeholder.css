@@ -1,0 +1,15 @@
+.placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-2);
+  padding: var(--space-8);
+  border: 1px dashed var(--line-strong);
+  border-radius: var(--radius);
+  background: var(--card);
+}
+
+.placeholder-title {
+  font-size: 18px;
+  font-weight: 650;
+}

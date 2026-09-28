@@ -1,0 +1,22 @@
+.floor-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: var(--space-3);
+}
+
+.floor-table {
+  aspect-ratio: 1.4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-1);
+  border: var(--border);
+  border-radius: var(--radius);
+  background: var(--card);
+  font-weight: 650;
+}
+
+.floor-table small {
+  font-weight: 500;
+}
