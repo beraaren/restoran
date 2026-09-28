@@ -3,6 +3,7 @@ node_modules/
 __pycache__/
 *.pyc
 data/*.db
+/restoran.db
 data/*.mp4
 data/*.jsonl
 logs/

@@ -34,6 +34,9 @@ from ..states.signals import route_pos, route_vision
 from ..store.db import (AnomalyRow, PosEventRow, SessionLocal, VisionEventRow,
                        init_db, store_anomaly, store_pos, store_vision)
 from .admin import router as admin_router
+from ..auth.admin_router import router as identity_admin_router
+from ..auth.login import router as auth_login_router
+from ..auth.me import router as auth_me_router
 
 SCENE_PATH = Path(os.environ.get("SCENE_PATH", "config/scene.demo.json"))
 CALIBRATION_S = int(os.environ.get("CALIBRATION_S", "0"))  # demo'da kapalı
@@ -117,6 +120,9 @@ async def lifespan(app: FastAPI):
 
 app = FastAPI(title="Restoran Akış İzleme", lifespan=lifespan)
 app.include_router(admin_router)
+app.include_router(auth_login_router)
+app.include_router(auth_me_router)
+app.include_router(identity_admin_router)
 app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_methods=["*"],
                    allow_headers=["*"])
 

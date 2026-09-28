@@ -26,6 +26,40 @@ Demo sonunda konsolda anomali dökümü basılır; API :8100'de açık kalır,
 panel onu okur. Bölge çizim aracı panelin ikinci sekmesindedir
 (PUT /scene ile backend'e kaydedilir).
 
+## Faz 0 — Geliştirme kurulumu (kimlik/yetki/auth)
+
+```bash
+# 1) Postgres (docker compose kökte; :5433)
+docker compose up -d db
+pg_isready -h localhost -p 5433 -U restoran
+
+# 2) Bağımlılıklar (uv workspace; apps/web JS olduğu için exclude'te)
+uv sync
+
+# 3) Şemalar — Alembic REPO KÖKÜNDEN -c ile koşar
+uv run alembic -c apps/api/alembic.ini upgrade head
+# yeni migration: uv run alembic -c apps/api/alembic.ini revision --autogenerate -m "..."
+
+# 4) Demo verisi (idempotent): tenant "demo", venue "taksim", 5 rol + 5 çalışan
+uv run python -m restoran.domain.seed
+# PIN'ler: patron 1111 (CARD-001), müdür 2222, garson 3333, aşçı 4444, kasiyer 5555
+
+# 5) Testler (pytest auth testleri gerçek Postgres'e koşar)
+uv run pytest tests/ -q
+uv run python tests/smoke_reconcile.py        # eski düz scriptler
+uv run python tests/test_pass_counter.py
+
+# 6) Sunucu (mevcut :8100'e dokunmamak için :8101 önerilir)
+uv run uvicorn restoran.api.main:app --port 8101
+curl -s localhost:8101/auth/login/pin -H 'Content-Type: application/json' \
+  -d '{"venue_slug":"taksim","employee_id_or_card":"CARD-001","pin":"1111"}'
+```
+
+Notlar: `DATABASE_URL` env var'ı `apps/api/.env` ile ezilebilir (default
+`postgresql+psycopg://restoran:restoran@localhost:5433/restoran`); `JWT_SECRET`
+prod'da env'den verilmeli. Legacy event store (`restoran.store.db`, SQLite
+defaultu) Faz 4'e kadar ayrı yaşar — domain Base'inden bağımsızdır.
+
 ## Mimari (özet)
 
 ```
