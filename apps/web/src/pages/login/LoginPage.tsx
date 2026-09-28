@@ -39,7 +39,7 @@ export function LoginPage() {
       return;
     }
     setError(null);
-    mutation.mutate({ venue_slug: venueSlug.trim() || 'demo', identifier: identifier.trim(), pin: submittedPin });
+    mutation.mutate({ venue_slug: venueSlug.trim() || 'demo', employee_id_or_card: identifier.trim(), pin: submittedPin });
   };
 
   return (
