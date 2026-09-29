@@ -11,3 +11,4 @@ web/dist/
 web/node_modules/
 .uv/
 *.egg-info/
+data/*.png
